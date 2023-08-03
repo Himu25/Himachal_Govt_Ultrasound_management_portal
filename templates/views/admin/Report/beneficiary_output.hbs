@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Table</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/public/CSS/reportTable.css">
+<link rel="stylesheet" href="/public/CSS/navbar.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+{{>navbar_admin}}
+<div class="report-container" id="report-container">
+<div class="row">
+<div class="column">
+    <div class="label">Date and time of report generation :</div>
+    <div class="value">{{formatDate payload.DToRG}}</div>
+</div>
+<div class="column">
+    <div class="label">User ID of report generator :</div>
+    <div class="value">{{payload.UserID}}</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+    <div class="label">Period of Service (From - To) :</div>
+    <div class="value">{{calculateTimeDifference payload.to payload.from true}} Days</div>
+</div>
+<div class="column">
+    <div class="label">No. of Registered Beneficiaries :</div>
+    <div class="value">{{counts.total}}</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+    <div class="label">Beneficiaries availed 00 Service :</div>
+    <div class="value">{{counts.completed_0}} Days</div>
+</div>
+<div class="column">
+    <div class="label">Beneficiaries availed 01 Service :</div>
+    <div class="value">{{counts.completed_1}}</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+    <div class="label">Beneficiaries availed 02 Services :</div>
+    <div class="value">{{counts.completed_2}} Days</div>
+</div>
+<div class="column">
+    <div class="label">Beneficiaries availed 03 Services :</div>
+    <div class="value">{{counts.completed_3}}</div>
+</div>
+</div>
+</div>
+<div class="container_1">
+<button id="button1" class="button">BID Report <i class='bx bxs-chevrons-down'></i></button>
+</div>
+<div class="scroll-container">
+<table class="table" id="table1">
+<thead>
+<th>S.No</th>
+<th>BID</th>
+<th>BID-Creation Date</th>
+<th>Registered by</th>
+<th>No. of Services Availed</th>
+</thead>
+<tbody>
+{{#each results}}
+<tr>
+<td data-label="S.No">{{@index}}</td>
+<td data-label="BID">{{this.bid}}</td>
+<td data-label="BID-Creation Date">{{formatDate this.ToBR}}</td>
+<td data-label="Registered by">{{this.registeredBy.hcid}}</td>
+<td data-label="No. of Services Availed">{{this.completed}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+<div class="container_1">
+<button id="button1" class="button">GHC Detailed Report <i class='bx bxs-chevrons-down'></i></button>
+</div>
+<div class="scroll-container">
+<table class="table" id="table1">
+<thead>
+<th>S.No</th>
+<th>HCID</th>
+<th>BID</th>
+<th>BID-Creation Date</th>
+</thead>
+<tbody>
+{{#each results}}
+<tr>
+<td data-label="S.No">{{@index}}</td>
+<td data-label="HCID">{{this.registeredBy.hcid}}</td>
+<td data-label="BID">{{this.bid}}</td>
+<td data-label="BID-Creation Date">{{formatDate this.ToBR}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+<script src="/public/js/navbar.js"></script>
+</script>
+</body>
+</html>

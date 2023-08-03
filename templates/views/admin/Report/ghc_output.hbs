@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Table</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/public/CSS/reportTable.css">
+<link rel="stylesheet" href="/public/CSS/navbar.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<style>
+   #button1{
+    border: none !important;
+   }
+</style>
+</head>
+{{>navbar_admin}}
+<div class="report-container" id="report-container">
+<div class="row">
+<div class="column">
+    <div class="label">Date and time of report generation :</div>
+    <div class="value">{{formatDate payload.DToRG}}</div>
+</div>
+<div class="column">
+    <div class="label">User ID of report generator :</div>
+    <div class="value">{{payload.UserID}}</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+    <div class="label">Period of Service (From - To) :</div>
+    <div class="value">{{calculateTimeDifference payload.to payload.from true}} Days</div>
+</div>
+<div class="column">
+    <div class="label">Total no. of Beneficiary added in the given period :</div>
+    <div class="value">{{payload.TotalCount}}</div>
+</div>
+</div>
+</div>
+<div class="container_1">
+<button id="button1" class="button">GHC Service Summary <i class='bx bxs-chevrons-down'></i></button>
+</div>
+<div class="scroll-container">
+<table class="table" id="table1">
+<thead>
+<th>S.No</th>
+<th>HCID</th>
+<th>GHC Name</th>
+<th>No. of Beneficiary added in ( {{calculateTimeDifference payload.to payload.from true}} Days)</th>
+</thead>
+<tbody>
+{{#each results}}
+<tr>
+<td data-label="S.No">{{@index}}</td>
+<td data-label="HCID">{{this.hcid}}</td>
+<td data-label="GHC Name">{{this.name}}</td>
+<td data-label="No. of Beneficiary added">{{this.count}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+<script src="/public/js/navbar.js"></script>
+</script>
+</body>
+</html>

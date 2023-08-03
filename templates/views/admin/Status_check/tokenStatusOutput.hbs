@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/public/CSS/reportTable.css">
+<link rel="stylesheet" href="/public/CSS/navbar.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<style>
+#button1{
+border: none !important;
+} 
+
+</style>
+</head>
+{{>navbar_admin}}
+<div class="report-container" id="report-container">
+<div class="row">
+<div class="column">
+<div class="label">Date and time of report generation :</div>
+<div class="value">{{formatDate payload.DToRG}}</div>
+</div>
+<div class="column">
+<div class="label">User ID of report generator :</div>
+<div class="value">{{payload.UserID}}</div>
+</div>
+</div>
+</div>
+<div class="container_1">
+    <button id="button1" class="button">Token Details</button>
+</div>
+<div class="scroll-container">
+<table class="table" id="table1">
+    <thead>
+    <th>TID</th>
+    <th>BID</th>
+    <th>HCID</th>
+    <th>ROID</th>
+    <th>ToTG</th>
+    <th>UCID</th>
+    <th>ToTS</th>
+    <th>Token Status</th>
+    </thead>
+    <tbody>
+        <tr>
+        <td data-label="TID">{{Token.TokenID}}</td>
+        <td data-label="BID">{{Token.bid}}</td>
+        <td data-label="HCID">{{Token.assignedBy.hcid}}</td>
+        <td data-label="ROID">{{Token.roid}}</td>
+        <td data-label="ToTG">{{formatDate Token.ToTC}}</td>
+        <td data-label="UCID">{{Token.completedBy.ucid}}</td>
+        <td data-label="ToTS">{{formatDate Token.ToTS}}</td>
+        <td data-label="Token Status">{{Token.status}}</td>
+        </tr>
+    </tbody>
+</table> 
+</div>
+<script src="/public/js/navbar.js"></script>
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{{#if success}}
+<div id="toast-container">
+    <div class="toast success"><i class='bx bx-check-circle'></i> {{message}}</div>
+</div>
+{{else if alert}}
+<div id="toast-container ">
+    <div class="toast alert"><i class='bx bx-error-circle'></i> {{message}}</div>
+</div>
+{{else if warning}}
+<div id="toast-container ">
+    <div class="toast warning"><i class='bx bx-error'></i> {{message}}</div>
+</div>
+{{/if}}

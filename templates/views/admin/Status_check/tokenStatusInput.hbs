@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+{{>header_admin}}
+</head>
+<body>
+{{>navbar_admin}}
+<div class="container">
+    <div class="title"><span>Token Status Check</span></div>
+    {{>alert}}
+    <div class="content">
+    <form action="/Token/StatusCheck_input" method="post">
+    <div class="user-details">
+    <div class="input-box">
+    <span class="details">Enter TID</span>
+    <input type="text" placeholder="TokenID" name="TokenID" autocomplete="off" required>
+    </div>
+    </div>
+    <div class="button">
+    <input id="submit" type="submit" value="Check Status">
+    </div>
+    </form>
+    </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="/public/js/navbar.js"></script>   
+<script src="/public/js/alerts.js"></script>  
+</body>
+</html>

@@ -1,0 +1,224 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #353535;
+    padding: .9375rem;
+    
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+color: #fff;
+}
+.brand{
+    margin-left: 7rem;
+    font-size: 1.5rem;
+    font-weight: 1000;
+color: #fff;
+}
+.list li a{
+    font-size: 1rem;
+}
+.list li a:hover{
+    text-decoration: underline ;
+border-bottom: solid 1px green;
+}
+.list li i{
+position: relative;
+bottom: 3.2px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 1.5625rem;
+    margin-right: 3rem;
+margin-top: 15px;
+}
+#toggler,.navbar label{
+    display: none;
+}
+@media screen and 
+(max-width: 1150px){ 
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .brand{
+        margin-left: 0.8rem;
+    }
+    .list{
+  margin-top: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.25rem;
+        margin-right: 0;
+    }
+    .navbar label{
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+  margin-top: 5px;
+    } 
+.navbar label .bbttn{
+  background-color: #fff;
+  width: 30px;
+  text-align: center;
+  border-radius: 3px;
+}
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+.bi-box-arrow-in-right{
+     position: relative;
+    bottom: 3.3px;
+}
+.bi-house-door{
+position: relative;
+bottom: 3.3px;
+}
+.bi-hospital{
+    position: relative;
+bottom: 3px;
+}
+.bi-check-circle-fill{
+position: relative;
+bottom: 3.3px;
+}
+.bi-exclamation-circle-fill{
+position: relative;
+/* bottom: 3.3px; */
+}
+.container{
+  margin-top: 0px;
+margin-left: auto;
+margin-right: auto;
+max-width: 1000px;
+width: 100%;
+background-color: #fff;
+padding: 25px 30px;
+border-radius: 5px;
+}
+.container .title{
+font-size: 25px;
+font-weight: 500;
+position: relative;
+}
+.container .title span{
+color: #585858;
+}
+.container .title::before{
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+height: 3px;
+width: 30px;
+border-radius: 5px;
+background: linear-gradient(135deg, #353535, #4d4d4d);
+}
+.content form .user-details{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+margin-bottom: 15px;
+width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+display: block;
+font-weight: 500;
+margin-bottom: 5px;
+}
+.user-details .input-box input{
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 15px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+border-color: #dcd9d9;
+}
+
+form input[type="radio"]{
+ display: none;
+}
+form .button{
+ height: 45px;
+ margin: 10px 0
+}
+form .button input{
+ height: 100%;
+ width: 100%;
+ border-radius: 5px;
+ border: none;
+ color: #fff;
+ font-size: 18px;
+ font-weight: 500;
+ letter-spacing: 1px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ background: linear-gradient(135deg, #353535, #4d4d4d);
+}
+form .button input:hover{
+/* transform: scale(0.99); */
+background: linear-gradient(-135deg, #353535, #4d4d4d);
+}
+@media(max-width: 584px){
+.container{
+max-width: 100%;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: 100%;
+}
+form .category{
+  width: 100%;
+}
+.content form .user-details{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.user-details::-webkit-scrollbar{
+  width: 5px;
+}
+}
+@media(max-width: 459px){
+.container .content .category{
+  flex-direction: column;
+}
+}
+/* input[type=date]{
+  opacity: 0;
+  border: #353535 solid;
+} */
+  .invalid{
+    color: red;
+    font-weight: 200;
+    font-size: 1rem;
+  }
+  /* input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+} */
+    

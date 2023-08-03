@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>header_admin}}
+</head>
+<body>
+	{{>navbar_healthCentre}}
+		<div class="container">
+		<div class="title">Benificiary Registration</div>
+		{{>alert}}
+		<div class="content">
+		<form action="/health-centre/beneficiary/registration" id="myForm" method="post">
+		<div class="user-details">
+		<div class="input-box">
+		<span class="details">Name</span>
+		<input type="text" data-type="name" value="{{formData.name}}" placeholder="Enter name" name="name"  maxlength="50" autocomplete="off" required>
+		</div>
+		<div class="input-box">
+		<span class="details">Wife of/Daughter of</span>
+		<input type="text" data-type="name" placeholder="w/o or d/o" name="wifeOf" autocomplete="off" maxlength="30" value="{{formData.wifeOf}}" required>
+		</div>
+		<div class="input-box">
+		<span class="details">Date of Birth</span>
+		<input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy" autocomplete="off" value="{{formData.dob}}" required>
+		</div>
+		<div class="input-box phone-box">
+		<span class="details">Number</span>
+		<input type="number" id="numberInput" name="number" data-type="number"  placeholder="Enter mobile no"  data-pattern="[6789][0-9]{9}" data-max-length="10" autocomplete="off" value="{{formData.number}}" required>
+		<span class="error-message"></span>
+		</div>
+		<div class="input-box">
+		<span class="details">Aadhar Number</span>
+		<input type="text" data-type="adhaar-number" class="{{{invalidClass}}}" id="aadharinput" name="AadharNo" placeholder="XXXX-XXXX-XXXX" maxLength="14" autocomplete="off" value="{{formData.AadharNo}}" required>
+		<span class="error-message"></span>
+		</div>
+		<div class="input-box">
+		<span class="details">Gravida</span>
+		<input type="number" data-type="number" name="gravida" placeholder="No of pregnancy women had" data-max-length="2" autocomplete="off" value="{{formData.gravida}}" required>
+		</div>
+		<div class="input-box">
+		<span class="details">Address</span>
+		<input type="text" name="address" placeholder="Enter address" autocomplete="off" maxlength="100" value="{{formData.address}}" required>
+		</div>
+		<div class="input-box">
+		<span class="details">Prescribed By</span>
+		<input type="text" data-type="name" name="doctor" placeholder="Name of the Doctor" maxlength="50" autocomplete="off" value="{{formData.doctor}}" required>
+		</div>
+		</div>
+		<div class="button">
+		<input type="submit" value="Register">
+		</div>
+		</form>
+		</div>
+		</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="/public/js/adhaar.js"></script>
+<script src="/public/js/navbar.js"></script>
+<script src="/public/js/number_name.js"></script>
+<script src="/public/js/alerts.js"></script>
+<script src="/public/js/date.js"></script>
+<script>
+</script>
+</html>

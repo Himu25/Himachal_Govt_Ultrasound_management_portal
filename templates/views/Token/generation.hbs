@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    {{>header_admin}}
+</head>
+<body>
+{{>navbar_healthCentre}}
+<div class="container">
+    <div class="title"><span>Token Generation</span></div>
+    {{>alert}}
+    <div class="content">
+    <form action="/health-centre/beneficiary/Token-generation" method="post">
+        <div class="user-details">
+        <div class="input-box">
+        <span class="details">Enter BID</span>
+        <input type="text" placeholder="BID" name = "bid" value="{{formData.bid}}" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+        <span class="details">Enter ROID</span>
+        <input type="text" placeholder="ROID" value="{{formData.roid}}" name = "roid" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <span class="details">Choose Your Preferred District</span>
+            <select name="district" id="districtSelect" required>
+                <option value="">Select a district</option>
+                <option value="bilaspur">Bilaspur</option>
+                <option value="chamba">Chamba</option>
+                <option value="hamirpur">Hamirpur</option>
+                <option value="kangra">Kangra</option>
+                <option value="kinnaur">Kinnaur</option>
+                <option value="kullu">Kullu</option>
+                <option value="lahaul-and-spiti">Lahaul and Spiti</option>
+                <option value="mandi">Mandi</option>
+                <option value="shimla">Shimla</option>
+                <option value="sirmaur">Sirmaur</option>
+                <option value="solan">Solan</option>
+                <option value="una">Una</option>
+            </select>
+            </div>
+                <div class="input-box">
+            <span class="details">Choose Your Preferred Block</span>
+            <select name="block" id="blockSelect" required disabled>
+                <option value="">Select a district first</option>
+            </select>
+            </div>
+        </div>
+        <div class="button">
+        <input id="submit" type="submit" value="Generate Token">
+        </div>
+    </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="/public/js/navbar.js"></script>
+<script src="/public/js/alerts.js"></script>
+<script src="/public/js/location.js"></script>
+</body>
+</html>

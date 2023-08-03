@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+{{>header_admin}}
+</head>
+<body>
+{{>navbar_admin}}
+<div class="container">
+<div class="title"><span>PUC Reports</span></div>
+{{>alert}}
+<div class="content">
+<form action="/PUC/Report_input" method="post">
+<div class="user-details">
+<div class="input-box">
+<select name= 'type' id="data-option" required>
+<option value="">--Select Type--</option>
+<option value="all-in-district">Report of All PUCs in a District</option>
+<option value="all-in-block">Report of All PUCs in a Block</option>
+<option value="single">Report Of Single PUC</option>
+</select>
+</div>
+</div>
+<div class="user-details">
+<div class="input-box">
+<span class="details">From</span>
+<input type="date" name = "from" autocomplete="off">
+</div>
+<div class="input-box">
+<span class="details">To</span>
+<input type="date" name = "to" autocomplete="off">
+</div>
+</div>
+<div class="user-details">
+<div class="input-box" style="display: none;" id="block_1">
+    <span class="details">District</span>
+    <select name="district" id="districtSelect" disabled>
+    <option value="">Select a district</option>
+    <option value="bilaspur">Bilaspur</option>
+    <option value="chamba">Chamba</option>
+    <option value="hamirpur">Hamirpur</option>
+    <option value="kangra">Kangra</option>
+    <option value="kinnaur">Kinnaur</option>
+    <option value="kullu">Kullu</option>
+    <option value="lahaul-and-spiti">Lahaul and Spiti</option>
+    <option value="mandi">Mandi</option>
+    <option value="shimla">Shimla</option>
+    <option value="sirmaur">Sirmaur</option>
+    <option value="solan">Solan</option>
+    <option value="una">Una</option>
+    </select>
+</div>
+    <div class="input-box" style="display: none;" id="block_2">
+    <span class="details">Block</span>
+    <select name="block" id="blockSelect" disabled>
+    <option value="">Select a district first</option>
+    </select>
+</div>
+    <div class="input-box" style="display: none;" id="block_3">
+    <span class="details">UCID</span>
+    <input type="text" placeholder="Enter Ucid" name="ucid" id="iid" autocomplete="off" disabled>
+    </div>
+</div> 
+<div class="button">
+<input id="submit" type="submit" value="Generate Report">
+</div>
+</form>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="/public/js/navbar.js"></script>
+<script src="/public/js/alerts.js"></script>
+<script src="/public/js/location.js"></script>
+<script src="/public/js/reportToggle.js"></script>
+</body>
+</html>
